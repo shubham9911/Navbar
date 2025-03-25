@@ -1,0 +1,17 @@
+// navigation.component.html
+<div class="navigation" [ngClass]="theme">
+  <div class="header">
+    <div class="tab">Opportunity for Improvement</div>
+    <div class="tab">Project</div>
+    <div class="tab">Priority</div>
+    <div class="tab">Category</div>
+    <div class="tab">Tracker</div>
+  </div>
+  <div class="sub-navigation">
+    <button class="tab active">Details</button>
+    <button class="tab">Activity Log</button>
+    <button class="tab">Tagged Content</button>
+  </div>
+</div>
+
+<button (click)="toggleTheme()">Toggle Theme</button>
