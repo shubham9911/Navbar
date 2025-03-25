@@ -1,17 +1,33 @@
-// navigation.component.html
-<div class="navigation" [ngClass]="theme">
-  <div class="header">
-    <div class="tab">Opportunity for Improvement</div>
-    <div class="tab">Project</div>
-    <div class="tab">Priority</div>
-    <div class="tab">Category</div>
-    <div class="tab">Tracker</div>
+<div class="container">
+  <div class="navigation">
+    <div class="navigation-shape">
+      <div class="tab-group">
+        <div class="shape-border"></div>
+        <div class="shape">
+          <span class="tab" *ngFor="let item of navigationTabs">{{
+            item | uppercase
+          }}</span>
+        </div>
+      </div>
+      <div class="tab-group">
+        <div class="shape">
+          <span class="tab" *ngFor="let item of detailTabs">{{
+            item | uppercase
+          }}</span>
+        </div>
+      </div>
+      <div class="tab-group">
+        <div class="shape">
+          <span class="tab active" *ngFor="let item of selectedTab">{{
+            item | uppercase
+          }}</span>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="sub-navigation">
-    <button class="tab active">Details</button>
-    <button class="tab">Activity Log</button>
-    <button class="tab">Tagged Content</button>
-  </div>
+  <i
+    class="fa-solid theme-icon"
+    [ngClass]="isDarkMode ? 'fa-sun' : 'fa-moon'"
+    (click)="toggleTheme()"
+  ></i>
 </div>
-
-<button (click)="toggleTheme()">Toggle Theme</button>

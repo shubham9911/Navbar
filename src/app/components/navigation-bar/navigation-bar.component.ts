@@ -1,11 +1,3 @@
-/* Angular Component Setup */
-
-// Step 1: Generate a new Angular component
-// ng generate component navigation
-
-// Step 2: Define the component structure
-
-// navigation.component.ts
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
@@ -17,9 +9,23 @@ import { Component } from '@angular/core';
   imports: [CommonModule],
 })
 export class NavigationComponent {
-  theme: 'light' | 'dark' = 'light';
+  navigationTabs: string[] = [
+    'Opportunity for Improvement',
+    'Project',
+    'Priority',
+    'Category',
+    'Tracker',
+  ];
+
+  detailTabs: string[] = ['Details', 'Activity Log'];
+  selectedTab: string[] = ['Tagged Content'];
+
+  isDarkMode = false;
 
   toggleTheme() {
-    this.theme = this.theme === 'light' ? 'dark' : 'light';
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle('dark-mode', this.isDarkMode);
   }
+
+  ngOnInit() {}
 }
